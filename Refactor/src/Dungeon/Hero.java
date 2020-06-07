@@ -39,7 +39,22 @@ public abstract class Hero extends DungeonCharacter
 	protected int numPillars;
 	protected Point2D location;
 
-//-----------------------------------------------------------------
+
+	public int getHeal() {return numHealingPots; }
+
+	public void changeHealingPots(int num){
+		numHealingPots += num;
+	}
+	public int getVision() {return numVisionPots; }
+
+	public void changeVisionPots(int num){
+		numVisionPots += num;
+	}
+	public int getPillars(){return numPillars;}
+	public void addPillar(){ numPillars++; }
+
+
+	//-----------------------------------------------------------------
 //calls base constructor and gets name of hero from user
   public Hero(String name, int hitPoints, int attackSpeed,
 				     double chanceToHit, int damageMin, int damageMax,
@@ -108,6 +123,7 @@ This method is called by: subtractHitPoints()
 ---------------------------------------------------------*/
   public boolean defend()
   {
+
 		return Math.random() <= chanceToBlock;
 
   }//end defend method

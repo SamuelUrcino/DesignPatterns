@@ -4,7 +4,7 @@ package Dungeon;
 
 public class HeroFactory {
 
-    AttackFactory attackFactory;
+    private AttackFactory attackFactory;
 
     public HeroFactory(AttackFactory attackFactory){
         this.attackFactory = attackFactory;
@@ -12,12 +12,9 @@ public class HeroFactory {
 
     public Hero createHero(String heroType){
 
-        Hero hero = new Warrior(attackFactory.getAttack("warrior"));
+        Hero hero;
         heroType = heroType.toUpperCase();
         switch(heroType){
-
-            case "WARRIOR":
-                return new Warrior(attackFactory.getAttack("warrior"));
             case "THIEF":
                 return new Thief(attackFactory.getAttack("thief"));
             case "SORCERESS":
@@ -27,9 +24,11 @@ public class HeroFactory {
             case "ROGUE":
                 return new Rogue(attackFactory.getAttack("rogue"));
 
-        }//end switch type
+            case "WARRIOR":
+            default:
+                return new Warrior(attackFactory.getAttack("warrior"));
 
-        return hero;
+        }//end switch type
 
     }//end createHero
 
