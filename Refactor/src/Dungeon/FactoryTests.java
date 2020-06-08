@@ -19,6 +19,18 @@ public class FactoryTests {
 		
 		hero.createHero(heroName);
 	}
+	
+	@Test
+	public void getHero_doesntThrowExceptionEmptyString()
+	{
+		
+		AttackFactory attackFactory = new AttackFactory();
+		HeroFactory hero = new HeroFactory(attackFactory);
+	
+		String heroName = " ";
+		
+		hero.createHero(heroName);
+	}
 	//end HeroFactory
 	
 	
