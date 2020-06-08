@@ -66,7 +66,7 @@ public abstract class Hero extends DungeonCharacter
 	this.numVisionPots = 0;
 	this.numPillars = 0;
 	this.location = new Point2D(0,0);
-	readName();
+	//readName();
   }
 
   //toString method that returns everything in project specs
